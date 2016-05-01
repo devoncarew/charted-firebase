@@ -99,7 +99,7 @@ void updateTimeSeriesChart(String wrapperSelector, [List data]) {
     DivElement areaHost = wrapper.querySelector('.chart-host');
     DivElement legendHost = wrapper.querySelector('.chart-legend-host');
 
-    data ??= _placeholderData;
+    data ??= _getPlaceholderData();
 
     ChartData chartData = new ChartData(_columnSpecs, data);
     ChartSeries series = new ChartSeries("Flutter Analysis Times", [1, 2], new LineChartRenderer());
@@ -126,11 +126,9 @@ String _printDurationVal(num val) {
 }
 
 Iterable _columnSpecs = [
-
   new ChartColumnSpec(
     label: 'Time',
     type: ChartColumnSpec.TYPE_TIMESTAMP
-    // formatter: (num val) => val.toString() + ' sdf'
   ),
   new ChartColumnSpec(
     label: 'flutter analyze flutter-repo',
@@ -144,7 +142,11 @@ Iterable _columnSpecs = [
   )
 ];
 
-Iterable _placeholderData = const [
-  const [1317452400000, 0.0, 0.0],
-  const [1317538800000, 0.0, 0.0],
-];
+Iterable _getPlaceholderData() {
+  DateTime now = new DateTime.now();
+
+  return [
+    [now.subtract(new Duration(days: 30)).millisecondsSinceEpoch, 0.0, 0.0],
+    [now.millisecondsSinceEpoch, 0.0, 0.0],
+  ];
+}
