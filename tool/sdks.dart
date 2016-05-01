@@ -52,12 +52,12 @@ main(List<String> args) async {
   Directory.current = new Directory('/Users/devoncarew/projects/flutter');
 
   if (args.first == '--all') {
-    SdkRelease release = releases.singleWhere((release) => release.version == args.first);
-    await _measure(release);
-  } else {
     for (SdkRelease release in releases.reversed) {
       await _measure(release);
     }
+  } else {
+    SdkRelease release = releases.singleWhere((release) => release.version == args.first);
+    await _measure(release);
   }
 }
 
