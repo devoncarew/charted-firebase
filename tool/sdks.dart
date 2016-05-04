@@ -24,11 +24,11 @@ main(List<String> args) async {
   List<SdkRelease> releases = [
     // new SdkRelease('1.15.0-dev.0.0', new DateTime(2016, DateTime.JANUARY, 28)),
     // new SdkRelease('1.15.0-dev.1.0', new DateTime(2016, DateTime.FEBRUARY, 2)),
-    new SdkRelease('1.15.0-dev.2.0', new DateTime(2016, DateTime.FEBRUARY, 10)),
-    new SdkRelease('1.15.0-dev.3.0', new DateTime(2016, DateTime.FEBRUARY, 17)),
-    new SdkRelease('1.15.0-dev.4.0', new DateTime(2016, DateTime.FEBRUARY, 24)),
-    new SdkRelease('1.15.0-dev.5.0', new DateTime(2016, DateTime.MARCH, 2)),
-    new SdkRelease('1.15.0-dev.5.1', new DateTime(2016, DateTime.MARCH, 9)),
+    // new SdkRelease('1.15.0-dev.2.0', new DateTime(2016, DateTime.FEBRUARY, 10)),
+    // new SdkRelease('1.15.0-dev.3.0', new DateTime(2016, DateTime.FEBRUARY, 17)),
+    // new SdkRelease('1.15.0-dev.4.0', new DateTime(2016, DateTime.FEBRUARY, 24)),
+    // new SdkRelease('1.15.0-dev.5.0', new DateTime(2016, DateTime.MARCH, 2)),
+    // new SdkRelease('1.15.0-dev.5.1', new DateTime(2016, DateTime.MARCH, 9)),
 
     new SdkRelease('1.16.0-dev.0.0', new DateTime(2016, DateTime.MARCH, 10)),
     new SdkRelease('1.16.0-dev.1.0', new DateTime(2016, DateTime.MARCH, 16)),
@@ -44,6 +44,7 @@ main(List<String> args) async {
 
     new SdkRelease('1.17.0-dev.0.0', new DateTime(2016, DateTime.APRIL, 26)),
     new SdkRelease('1.17.0-dev.1.0', new DateTime(2016, DateTime.APRIL, 27)),
+    new SdkRelease('1.17.0-dev.2.0', new DateTime(2016, DateTime.MAY, 4)),
   ];
 
   firebase = new FirebaseClient(Platform.environment['FIREBASE_CRED']);
